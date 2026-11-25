@@ -34,7 +34,7 @@ if [[ $PUBLISH == 1 && $NOTARIZE == 0 ]]; then
 fi
 
 REPO="barry-napier/pagewise"
-NOTARY_PROFILE="pagewise-notary"
+NOTARY_PROFILE="${NOTARY_PROFILE:-pagewise-notary}"  # set NOTARY_PROFILE to reuse another saved login
 SPARKLE_ACCOUNT="com.barrynapier.pagewise"
 BUILD_NUMBER=$(git rev-list --count HEAD)
 OUT="build/release/$VERSION"
