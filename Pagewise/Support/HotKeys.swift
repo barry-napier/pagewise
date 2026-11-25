@@ -9,8 +9,8 @@ struct Shortcut: Codable, Equatable, Sendable {
     /// What the key prints, for showing the shortcut.
     var key: String
 
-    /// ⌥Space opens the ask box.
-    static let ask = Shortcut(keyCode: UInt32(kVK_Space), modifiers: NSEvent.ModifierFlags([.option]).rawValue, key: "Space")
+    /// ⌃⌥P opens the ask box. Few apps use Control with Option, so it rarely clashes.
+    static let ask = Shortcut(keyCode: UInt32(kVK_ANSI_P), modifiers: NSEvent.ModifierFlags([.control, .option]).rawValue, key: "P")
 
     var flags: NSEvent.ModifierFlags { NSEvent.ModifierFlags(rawValue: modifiers) }
 

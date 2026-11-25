@@ -26,7 +26,7 @@ Needs macOS 26 or later, an Apple Silicon Mac, and Apple Intelligence turned on.
 - **Check the proof:** each answer lists the sentences it is based on. Click one
   to open the page with that sentence highlighted. Under each answer,
   "Searched …" shows which pages Pagewise looked at.
-- **Ask from anywhere:** press **⌥Space** in any app. With a PDF open in
+- **Ask from anywhere:** press **⌃⌥P** in any app. With a PDF open in
   Preview, the box asks about that PDF. Otherwise it asks your whole library.
   You can change the shortcut in Settings.
 - **Watch folders:** in Settings, pick folders like Downloads. New and changed
