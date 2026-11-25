@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagewise · Ask your PDFs, and see the proof</title>
+<meta name="description" content="A free, open-source Mac app. Ask questions of your PDFs with Apple’s on-device AI. Every answer shows the exact sentences it came from, highlighted on the page.">
+<link rel="canonical" href="https://pagewise.bnapier.dev/">
+<meta property="og:title" content="Pagewise">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pagewise.bnapier.dev/">
+<meta property="og:image" content="https://pagewise.bnapier.dev/assets/icon.png">
+<meta property="og:description" content="Ask your PDFs anything. See the proof. Free, open source, and it all runs on your Mac.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
+<script>
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t } catch {}
+</script>
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="home" href="#top" aria-label="Pagewise, top of page"><img src="assets/icon.png" width="28" height="28" alt=""></a>
+  <a class="wide" href="#proof">The proof</a>
+  <a class="wide" href="#features">Features</a>
+  <a class="wide" href="#privacy">Privacy</a>
+  <a href="#install">Install</a>
+  <button id="theme" type="button" aria-label="Switch between light and dark">◐</button>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <h1>Ask your PDFs.<br><mark>See the proof.</mark></h1>
+    <div class="pitch">
+      <p>Pagewise answers questions about your PDFs with Apple’s AI, on your Mac. Every answer shows the sentences it came from. Click one, and there it is, highlighted on the page.</p>
+      <div class="actions">
+        <a class="download" href="https://github.com/barry-napier/pagewise/releases/latest/download/Pagewise.dmg">Download for Mac</a>
+        <a class="source" href="https://github.com/barry-napier/pagewise">Read the code</a>
+      </div>
+      <p class="needs">Free and open source. No account. Needs macOS 26, Apple silicon and Apple Intelligence.</p>
+    </div>
+  </header>
+
+  <figure class="shot">
+    <img class="light" src="assets/shots/window-light.webp" width="1600" height="1006" alt="Pagewise answering questions about a lease, with quotes and the PDF page highlighted">
+    <img class="dark" src="assets/shots/window-dark.webp" width="1600" height="1006" alt="">
+    <figcaption>Pagewise’s real window. The answers came from Apple’s model on a Mac, about a sample lease.</figcaption>
+  </figure>
+
+  <section id="proof" class="section proof">
+    <div class="section-head">
+      <h2>A small AI, kept honest.</h2>
+      <p>The AI on your Mac is private and free, but small. It can only read a few pages at a time, and it can make things up. So Pagewise never just trusts it.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Finds the right pages first.</b> Your PDFs are cut into small pieces and searched by meaning and by words. Only the best pieces go to the AI.</li>
+      <li><b>Asks for quotes, not just answers.</b> The AI must copy the sentences its answer is based on.</li>
+      <li><b>Checks every quote.</b> A quote that isn’t really in your PDF is thrown away.</li>
+      <li><b>Says “I couldn’t find that”.</b> No checked quote, no answer. It shows the closest pages instead of guessing.</li>
+      <li><b>Shows where it looked.</b> “Searched pages 4, 12 and 13”, under every answer.</li>
+    </ol>
+  </section>
+
+  <section id="features" class="section">
+    <div class="section-head">
+      <h2>Made for the PDFs you actually have.</h2>
+    </div>
+    <div class="grid">
+      <article><span class="ic">⌥</span><h4>Ask from anywhere</h4><p>Press <kbd>⌥Space</kbd> in any app. A small box asks your whole library, like Spotlight.</p></article>
+      <article><span class="ic">◧</span><h4>Ask the PDF you’re reading</h4><p>With a PDF open in Preview, the box asks about that one. No importing.</p></article>
+      <article><span class="ic">⟲</span><h4>Watch a folder</h4><p>Point it at Downloads or Documents. New PDFs are added and indexed by themselves.</p></article>
+      <article><span class="ic">▦</span><h4>Pull out tables</h4><p>Find every table in a PDF. Copy it as CSV, or save it as a spreadsheet file.</p></article>
+      <article><span class="ic">◫</span><h4>Scanned PDFs too</h4><p>Pages with no text are read with Apple’s text reader, so scans work like any PDF.</p></article>
+      <article><span class="ic">≡</span><h4>Summaries</h4><p>Sums up each part, then the whole. Long PDFs are fine.</p></article>
+      <article><span class="ic">⧉</span><h4>One, some, or all</h4><p>Ask a single PDF, a few you pick, or your whole library at once.</p></article>
+      <article><span class="ic">⚡</span><h4>Instant to reopen</h4><p>The index is saved, so a PDF you added last month answers straight away.</p></article>
+      <article><span class="ic">文</span><h4>Your language</h4><p>Answers in the language you ask in, or one you pick.</p></article>
+    </div>
+  </section>
+
+  <section id="privacy" class="section privacy">
+    <h2>Your PDFs are private.<br><em>So they stay on your Mac.</em></h2>
+    <dl>
+      <div><dt>Who reads my PDFs?</dt><dd>Apple’s tools, on your Mac: Vision for scans, on-device search, and Apple’s on-device model for answers.</dd></div>
+      <div><dt>Does it use the internet?</dt><dd>Only to check for updates and download them. No account, no tracking.</dd></div>
+      <div><dt>Does it change my PDFs?</dt><dd>Never. It reads them and keeps its index in its own folder.</dd></div>
+      <div><dt>What about Preview?</dt><dd>It asks Preview which PDF is open, and nothing else. macOS asks you first.</dd></div>
+      <div><dt>Can I delete everything?</dt><dd>Yes. One button deletes the index and every chat. Your PDFs stay put.</dd></div>
+      <div><dt>Can it get things wrong?</dt><dd>Yes, it’s AI. That’s why every answer shows its quotes. Check them.</dd></div>
+    </dl>
+  </section>
+
+  <section id="install" class="section install">
+    <h2>Stop scrolling. Ask.</h2>
+    <ol>
+      <li>Click <b>Download for Mac</b>.</li>
+      <li>Open <b>Pagewise.dmg</b>, then drag Pagewise into Applications.</li>
+      <li>Open it, drop in some PDFs, and ask.</li>
+    </ol>
+    <a class="download" href="https://github.com/barry-napier/pagewise/releases/latest/download/Pagewise.dmg">Download for Mac</a>
+    <p class="needs">Free and open source. Checked by Apple for malware. Updates itself.</p>
+  </section>
+</main>
+
+<footer>
+  <span>Pagewise · Made by Barry Napier</span>
+  <a href="https://github.com/barry-napier/pagewise">Source code</a>
+  <a href="https://github.com/barry-napier/pagewise/blob/main/LICENSE">MIT License</a>
+  <a href="https://github.com/barry-napier/pagewise/issues">Report a problem</a>
+</footer>
+
+</body>
+</html>

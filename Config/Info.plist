@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Sparkle: where updates are announced, and the key that signs them. -->
+	<key>SUFeedURL</key>
+	<string>https://github.com/barry-napier/pagewise/releases/latest/download/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>48t5z2iezRJGJR/02pPGhPyySSxI3gQTakExNeWhrs0=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<!-- PDFs can be opened with Pagewise or dropped on its Dock icon. -->
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>PDF Document</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adobe.pdf</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,71 @@
+name: Pagewise
+options:
+  bundleIdPrefix: com.barrynapier
+  deploymentTarget:
+    macOS: "26.0"
+  createIntermediateGroups: true
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    exactVersion: 2.10.1
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  Pagewise:
+    type: application
+    platform: macOS
+    sources:
+      - path: Pagewise
+    dependencies:
+      - package: Sparkle
+    configFiles:
+      Debug: Config/Pagewise.xcconfig
+      Release: Config/Pagewise.xcconfig
+    scheme:
+      testTargets:
+        - PagewiseTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barrynapier.pagewise
+        PRODUCT_NAME: Pagewise
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: Config/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Config/Pagewise.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_KEY_CFBundleDisplayName: Pagewise
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+        INFOPLIST_KEY_NSAppleEventsUsageDescription: Pagewise asks Preview which PDF you are reading, so you can ask questions about it. It never changes anything in Preview.
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "Apple Development"
+        ENABLE_USER_SCRIPT_SANDBOXING: YES
+      configs:
+        Release:
+          CODE_SIGN_IDENTITY: "Developer ID Application"
+          OTHER_CODE_SIGN_FLAGS: "--timestamp"
+  # Unit tests for the parts that need no window: splitting, search,
+  # the quote check, and the PDF reading. They compile those files directly.
+  PagewiseTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests
+      - path: Pagewise/Core
+      - path: Pagewise/Library/TextReader.swift
+      - path: Pagewise/Library/TextLayout.swift
+      - path: Pagewise/Library/Engine.swift
+      - path: Pagewise/Ask/Asker.swift
+    configFiles:
+      Debug: Config/Pagewise.xcconfig
+      Release: Config/Pagewise.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.barrynapier.pagewise.tests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "Apple Development"
